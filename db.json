@@ -1,42 +1,55 @@
 {
-  "clientes": [
+  "clients": [
     {
-      "nombre": "Juan (Actualizado)",
-      "empresa": "Codigo Con Juan",
+      "nom": "Juan (Actualitzat)",
+      "empresa": "Empresa Exemple 1",
       "email": "juan@juan.com",
-      "telefono": "102013313",
-      "notas": "Nueva Nota",
+      "telefon": "102013313",
       "id": 1
     },
     {
-      "nombre": "Karen",
-      "empresa": "Codigo Con Juan",
-      "email": "karen_nuevo@juan.com",
-      "telefono": "138198313",
-      "notas": "Karen desea una REST API",
+      "nom": "Karen",
+      "empresa": "Empresa Exemple 2",
+      "email": "karen_nou@juan.com",
+      "telefon": "138198313",
       "id": 2
     },
     {
       "id": 4,
-      "nombre": "Miguel",
-      "telefono": 319381983,
+      "nom": "Miguel",
+      "telefon": "319381983",
       "email": "miguel@juan.com",
-      "empresa": "Codigo Con Juan"
+      "empresa": "Empresa Exemple 3"
     },
     {
       "id": 5,
-      "nombre": "Pedro",
-      "telefono": 1398198938,
+      "nom": "Pedro",
+      "telefon": "1398198938",
       "email": "pedro@juan.com",
-      "empresa": "Codigo Con Juan"
+      "empresa": "Empresa Exemple 4"
     },
     {
-      "nombre": "Juan Desde React",
-      "empresa": "Codigo con Juan",
-      "email": "correo@correo.com",
-      "telefono": "10901",
-      "notas": "El Cliente desea un ecommerce",
+      "nom": "Juan Des de React",
+      "empresa": "Empresa Exemple 5",
+      "email": "correu@correu.com",
+      "telefon": "10901",
       "id": 6
+    },
+    {
+      "nom": "Pablo Ros Flores",
+      "empresa": "Bonpreu",
+      "email": "pablo_ros_flores@yahoo.es",
+      "telefon": "+34676290474",
+      "notes": "Hello! ",
+      "id": 7
+    },
+    {
+      "nom": "Silvia",
+      "empresa": "escola",
+      "email": "silvia@prova.com",
+      "telefon": "748289234",
+      "notes": "Vol una aplicació",
+      "id": 8
     }
   ]
 }
