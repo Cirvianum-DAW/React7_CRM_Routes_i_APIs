@@ -1437,4 +1437,125 @@ Ara bé, què passa si tornem a trobar-nos que el client no existeix per algun m
 defaultValue={client?.nom}
 ```
 
-Modifica la resta de camps del
+Modifica la resta de camps del formulari perquè facin servir `defaultValue` i l'operador `?` i prova a editar un client. Hauries de poder veure el formulari omplert amb les dades del client que volem editar.
+
+### Creant l'acció per editar el client (UPDATE)
+
+Quan premem el botó per modificar el client encara no farà efectiva la modificació ja que no hem implementat la lògica.
+
+Ho farem mitjançant un `action` que ja saps que és una funció que rep un objecte amb la petició que s'ha fet.
+
+Anem a afegir l'acció. Podem agafar el codi que teníem al `NouClient.jsx` i modificar-lo perquè faci el que necessitem. Revisa per un moment si creus que haurem de canviar alguna cosa...
+
+- Les validacions continuaran sent vàlides
+- Els camps que necessitem són els mateixos
+- Ara però ja no hem d'agefir un nou client sinó que hem d'actualitzar el client que ja tenim
+
+Recorda que per disparar l'acció necessitem fer servir el `hook` `useAction` que ja havíem vist abans i que hem de definir al `router` del nostre `main.jsx`:
+
+```jsx
+// main.jsx
+...
+import EditarClient, { loader as editarClientLoader, action as editarClientAction } from './pages/EditarClient';
+...
+{
+        path: '/clients/:clientId/editar',
+        element: <EditarClient />,
+        loader: editarClientLoader,
+        action: editarClientAction,
+        errorElement: <ErrorPage />,
+      },
+...
+```
+
+Pensa que això té molt sentit perquè necessitem el `loader` per obtenir les dades del client que volem editar i l'`action` per actualitzar-les.
+
+Anem a crear-nos la funció que faci la modificació de clients a la nostra REST API. Aquesta funció la crearem al nostre arxiu `Clients.js` i la cridarem `actualitzarClient`:
+
+```js
+// Clients.js
+...
+export const actualitzarClient = async (id, dades) => {
+  const resposta = await fetch(`${import.meta.env.VITE_API_URL}/${client.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(client),
+  });
+  await resposta.json();
+};
+...
+```
+
+A destacar:
+
+- El mètode que farem servir és `PUT` perquè estem actualitzant un client.
+
+Imoprtem i actualitzem el nostre `action` perquè faci servir aquesta nova funció:
+
+```jsx
+// EditarClient.jsx
+// Actualitzar el client
+await actualitzarClient(params.clientID, dades);
+return redirect('/');
+```
+
+Recorda que el `params.clientID` el rebem gràcies al `path` dinàmic que hem creat a la nostra ruta i que les `dades` les hem obtingut a través de la lògica del `fromData`.
+
+Ens queda un últim detall. Anteriorment hem comentat els errors, recordes? Si els descomentes rebràs un error, conforme no està definit.
+
+En primer lloc hauràs d'importar el `hook` `useActionData` al teu component. Després hauràs de fer servir aquest `hook` per obtenir els errors que retorna el `action`:
+
+```jsx
+// EditarClient.jsx
+...
+const errors = useActionData();
+...
+```
+
+Recorda que per poder accedir a alguna de les variables d'action, hem de fer servir aquest `hook`. Recorda que l'hauràs d'importar al teu component també!
+
+I com que fem ús del component `Error` per mostrar els errors, hauràs d'importar-lo també!
+
+Tampoc hem importat el `redirect` que ja havíem vist abans. Recorda que aquest `hook` ens permet redireccionar a una altra pàgina. En aquest cas, quan s'actualitzi el client, volem que es redireccioni a la pàgina de clients.
+
+### Eliminant un Client (DELETE)
+
+Ja quasi ho tenim això! Anem a veure com eliminar un client. Treballarem amb el nostre botó d'eliminar que ja tenim des de l'inici.
+
+L'aproximació que farem servir serà la de fer servir el botó com a `submit` del nostre formulari. Això ens permetrà fer servir el `action` per eliminar el client. Al component `Client.jsx` afegirem el següent. Fes que el teu botó d'eliminar quedi embolcallat dins del component `Form` de `react-router-dom`. Importa tant `Form` com `redirect`.
+
+Anem per part, el nostre botó hauria de quedar de la següent manera:
+
+```jsx
+// Client.jsx
+...
+<Form method="post" action={'/clients/${id}/eliminar'}>
+  <button
+  type="submit"
+  >
+    Eliminar
+  </button>
+  ...
+```
+
+Dit això...
+
+#### Repte!
+
+Sabries implementar el `action` per eliminar el client? Pensa que necessitaràs:
+
+- Importar el `hook` `useAction` al teu component.
+- Crear una nova funció anomenada `eliminarClient` al teu arxiu `Clients.js`.
+- Fer servir aquesta funció al teu `action`.
+- Importar el `hook` `useActionData` al teu component.
+- Fer servir aquest `hook` per obtenir els errors que retorna el `action`.
+- Preguntar a l'usuari si està segur que vol eliminar el client.
+- Redireccionar a la pàgina de clients.
+
+Us deixo una petita demo!
+
+![Demo](/assets/demo.gif)
+
+Endavant!!! Amb això ja tindríem la nostra aplicació completada ;)

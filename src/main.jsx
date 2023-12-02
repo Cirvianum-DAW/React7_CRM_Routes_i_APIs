@@ -7,7 +7,9 @@ import NouClient, { action as nouClientAction } from './pages/NouClient';
 import Index, { loader as clientsLoader } from './pages/Index';
 import EditarClient, {
   loader as editarClientLoader,
+  action as editarClientAction,
 } from './pages/EditarClient';
+import { action as eliminarClientAction } from './components/Client';
 import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
@@ -30,7 +32,12 @@ const router = createBrowserRouter([
         path: '/clients/:clientID/editar',
         element: <EditarClient />,
         loader: editarClientLoader,
+        action: editarClientAction,
         errorElement: <ErrorPage />,
+      },
+      {
+        path: '/clients/:clientID/eliminar',
+        action: eliminarClientAction,
       },
     ],
   },

@@ -1,55 +1,68 @@
 {
   "clients": [
     {
-      "nom": "Juan (Actualitzat)",
-      "empresa": "Empresa Exemple 1",
-      "email": "juan@juan.com",
-      "telefon": "102013313",
+      "nom": "Pablo",
+      "empresa": "ABC Company",
+      "email": "john@example.com",
+      "telefon": "987654321",
+      "notes": "Hei!",
       "id": 1
     },
     {
-      "nom": "Karen",
-      "empresa": "Empresa Exemple 2",
-      "email": "karen_nou@juan.com",
-      "telefon": "138198313",
-      "id": 2
+      "id": 3,
+      "nom": "Michael",
+      "telefon": "789123456",
+      "email": "michael@example.com",
+      "empresa": "123 Industries"
     },
     {
       "id": 4,
-      "nom": "Miguel",
-      "telefon": "319381983",
-      "email": "miguel@juan.com",
-      "empresa": "Empresa Exemple 3"
+      "nom": "Sophia",
+      "telefon": "321654987",
+      "email": "sophia@example.com",
+      "empresa": "ABC Company"
     },
     {
       "id": 5,
-      "nom": "Pedro",
-      "telefon": "1398198938",
-      "email": "pedro@juan.com",
-      "empresa": "Empresa Exemple 4"
+      "nom": "Ana",
+      "telefon": "123456789",
+      "email": "ana@example.com",
+      "empresa": "Example Company"
     },
     {
-      "nom": "Juan Des de React",
-      "empresa": "Empresa Exemple 5",
-      "email": "correu@correu.com",
-      "telefon": "10901",
-      "id": 6
+      "id": 6,
+      "nom": "Daniel",
+      "telefon": "654987321",
+      "email": "daniel@example.com",
+      "empresa": "XYZ Corporation"
     },
     {
-      "nom": "Pablo Ros Flores",
-      "empresa": "Bonpreu",
-      "email": "pablo_ros_flores@yahoo.es",
-      "telefon": "+34676290474",
-      "notes": "Hello! ",
-      "id": 7
+      "id": 7,
+      "nom": "Olivia",
+      "telefon": "987321654",
+      "email": "olivia@example.com",
+      "empresa": "123 Industries"
     },
     {
-      "nom": "Silvia",
-      "empresa": "escola",
-      "email": "silvia@prova.com",
-      "telefon": "748289234",
-      "notes": "Vol una aplicació",
-      "id": 8
+      "id": 8,
+      "nom": "William",
+      "telefon": "789654123",
+      "email": "william@example.com",
+      "empresa": "ABC Company"
+    },
+    {
+      "id": 9,
+      "nom": "Emma",
+      "telefon": "456123789",
+      "email": "emma@example.com",
+      "empresa": "XYZ Corporation"
+    },
+    {
+      "id": 10,
+      "nom": "James",
+      "telefon": "321789456",
+      "email": "james@example.com",
+      "empresa": "123 Industries"
     }
   ]
 }
