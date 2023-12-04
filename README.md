@@ -434,11 +434,36 @@ const Client = ({ client }) => {
       <td className="border px-4 py-2">{client.nom}</td>
       <td className="border px-4 py-2">{client.email}</td>
       <td className="border px-4 py-2">
-        <button className="rounded bg-indigo-800 px-4 py-2 font-bold text-white hover:bg-indigo-900">
+        <button className="grow-1 mr-2 flex items-center justify-center rounded bg-green-200 px-4 py-2 text-xs font-bold uppercase text-green-800">
           Editar
+           <svg
+        className="ml-2 h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          d="M6 18L18 6M6 6l12 12"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
         </button>
-        <button className="rounded bg-red-800 px-4 py-2 font-bold text-white hover:bg-red-900">
+        <button className="grow-1 flex items-center justify-center rounded bg-red-200 px-4 py-2 text-xs font-bold uppercase text-red-800">
           Eliminar
+           <svg
+          className="ml-2 h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            d="M6 18L18 6M6 6l12 12"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+        </svg>
         </button>
       </td>
     </tr>
