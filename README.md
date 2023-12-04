@@ -420,7 +420,35 @@ Segurament hagis optat per crear l'estrcutrua directament al component `Index` p
 
 Aquí tens una possible solució:
 
-A continuaciói l'arxiu `Index.jsx`:
+Ens creem el nostre component `Client.jsx` a la carpeta `components`:
+
+Ens hem de crear el nostre component `Client.jsx` a la carpeta `components`:
+
+```jsx
+// Client.jsx
+import React from 'react';
+
+const Client = ({ client }) => {
+  return (
+    <tr>
+      <td className="border px-4 py-2">{client.nom}</td>
+      <td className="border px-4 py-2">{client.email}</td>
+      <td className="border px-4 py-2">
+        <button className="rounded bg-indigo-800 px-4 py-2 font-bold text-white hover:bg-indigo-900">
+          Editar
+        </button>
+        <button className="rounded bg-red-800 px-4 py-2 font-bold text-white hover:bg-red-900">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  );
+};
+
+export default Client;
+```
+
+A continuació modifiquem l'arxiu `Index.jsx`:
 
 ```jsx
 // Index.jsx
